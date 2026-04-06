@@ -1,18 +1,18 @@
 === User Login History ===
 Contributors: faiyazalam,w3reign,nekokun,harm10
 Donate link: https://www.paypal.me/erfaiyazalam/
-Tags: login log,login activity,brute force indicator,security,history,tool
-Requires at least: 5.0.0
-Requires PHP: 8.1.2
-Tested up to: 6.8.1
-Stable tag: 2.1.7
+Tags: login log,login activity,login tacker,brute force,history
+Requires at least: 6.2
+Requires PHP: 7.4
+Tested up to: 6.9
+Stable tag: 2.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Helps you to know your website's visitors by tracking their login related information like login/logout time, country, browser and many more.
 
 == Description ==
-The plugin helps you to track any visitor\'s login details with the following attributes:
+The plugin helps you to track any visitor's login details with the following attributes:
 
 1. **Login** - Login Date-Time
 1. **Logout** - Logout Date-Time
@@ -213,6 +213,19 @@ It means that:
 
 == Changelog ==
 
+= 2.1.8 (14th March 2026) =
+
+* Improved CSV export feature.
+* Removed external CSV League library dependency.
+* Improved UI for frontend login list page (shortcode).
+* Improved UI for login list page in admin.
+* Improved SQL queries.
+* Updated text domain.
+* Renamed hook manage_faulh_admin_custom_column to faulh_manage_admin_custom_column.
+* Renamed hook manage_faulh_public_custom_column to faulh_manage_public_custom_column.
+* General plugin check improvements and cleanup.
+
+
 = 2.1.7 (15th June 2025) =
 
 * Fixed potential security issues by properly escaping all dynamic output.
@@ -283,16 +296,3 @@ It means that:
 * Date range validation on the filter forms.
 * Date and Time format of the user login listing table can be changed from the general settings.
 * Improved design of the listing tables.
-
-== Upgrade Notice ==
-
-= 2.0.0 =
-
-1. We have removed about us page and help page from the plugin menu. You can read the documentation in the plugin description on the WordPress plugin directory itself.
-
-= 1.0 <= 1.7.0 =
-
-After upgrading, you have to do the following changes:
-1. Update your timezone from your profile edit page.
-1. Replace the old shortcode [user-login-history] with new shortcode [user_login_history]
-1. All the logged in users must be re-login otherwise last seen time and logout time will not be updated.

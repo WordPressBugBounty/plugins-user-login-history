@@ -11,11 +11,11 @@
 
 namespace User_Login_History\Inc\Common\Abstracts;
 
-use User_Login_History as NS;
-use User_Login_History\Inc\Common\Helpers\Template as Template_Helper;
-use User_Login_History\Inc\Common\Helpers\Date_Time as Date_Time_Helper;
-use User_Login_History\Inc\Common\Helpers\Db as Db_Helper;
 use User_Login_History\Inc\Common\Helpers\Validation as Validation_Helper;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 if ( ! class_exists( 'WP_List_Table' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
@@ -205,7 +205,7 @@ abstract class List_Table extends \WP_List_Table {
 	 * @return string
 	 */
 	public function timezone_edit_link() {
-		return esc_html__( 'This table is showing time in the timezone', 'faulh' ) . ' - <strong>' . $this->get_timezone() . "</strong>&nbsp;<a class='edit-link' href='" . get_edit_user_link() . '#' . $this->plugin_name . "'>" . esc_html__( 'Edit', 'faulh' ) . '</a>';
+		return esc_html__( 'This table is showing time in the timezone', 'user-login-history' ) . ' - <strong>' . $this->get_timezone() . "</strong>&nbsp;<a class='edit-link' href='" . get_edit_user_link() . '#' . $this->plugin_name . "'>" . esc_html__( 'Edit', 'user-login-history' ) . '</a>';
 	}
 
 	/**
@@ -316,5 +316,4 @@ abstract class List_Table extends \WP_List_Table {
 		$this->delete_action_nonce = $value;
 		return $this;
 	}
-
 }
